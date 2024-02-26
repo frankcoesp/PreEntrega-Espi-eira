@@ -1,12 +1,12 @@
 import React from 'react'
 import './Nabvar/Navbar.css'
-import logo_light from '../../src/assets/images/logo_light.png'
-import logo_dark from '../../src/assets/images/logo_dark.png'
+import CartWidget from './CartWidget/CartWidget.jsx'
+import logo_light from '../../src/assets/images/tapa_logo_light.png'
+import logo_dark from '../../src/assets/images/tapa_logo_dark.png'
 import search_icon_dark from '../../src/assets/images/search-b.png'
 import search_icon_light from '../../src/assets/images/search-w.png'
 import toogle_light from '../../src/assets/images/day.png'
 import toogle_dark from '../../src/assets/images/night.png'
-
 
 
 
@@ -22,16 +22,18 @@ function Navbar({theme,setTheme}) {
             <ul>
                 <li className=''>Principal</li>
                 <li className=''>Contacto</li>
-                <li className=''>nosotros</li>
+                <li className=''>Nosotros</li>
                 <li className=''>Productos</li>
             </ul>
 
         <div className='search-box'>
-        <input type="text" placeholder='Search'/>
+        <input type="text" placeholder='¿Que productos te interesan?'/>
         <img src={theme == 'light' ? search_icon_light : search_icon_dark} alt="buscador" />
         </div>
-
+        <CartWidget/>
         <img onClick={()=>{toogle_mode()} }  src={theme == 'light' ? toogle_dark : toogle_light} alt="modo" className='toggle-icon'/>
+
+        
         </div>
     )
 }
